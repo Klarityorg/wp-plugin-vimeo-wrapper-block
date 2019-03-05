@@ -1,6 +1,6 @@
 {
   "name": "vimeo-wrapper-block",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "start": "cgb-scripts start",
