@@ -89,13 +89,13 @@ function render_video_thumbnail( $attributes ) {
     wp_enqueue_script(
         'header_video-handler-js',
         plugins_url('/src/block/show-video.js', __DIR__),
-        [], // Dependencies, defined above.
-        true // Enqueue the script in the footer.
+        [],
+        true
     );
-    return (
-      '<div class="video-container ' . $fullWidthClass. '" onclick="showVideo(this, \'' . $link . '\')">
-        <div class="thumbnail-container ' . $fullWidthClass. '" style="background-image:url(' . $videoThumbnail . ')">
-          <img class="play-icon" alt="Play" src="'.plugin_dir_url( __DIR__ ) . 'assets/play_button.png"/>
+    return
+      "<div class='video-container $fullWidthClass' onclick='showVideo(this, \"$link\")'>
+        <div class='thumbnail-container $fullWidthClass' style='background-image:url(\"$videoThumbnail\")'>
+          <img class='play-icon' alt='Play' src='".plugin_dir_url( __DIR__ )."/assets/play_button.png' />
         </div>
-	    </div>');
+	    </div>";
 }
