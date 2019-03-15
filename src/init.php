@@ -80,22 +80,27 @@ register_block_type('klarity/klarity-vimeo-wrapper', [
     ]
 ]);
 
-
 function render_video_thumbnail( $attributes ) {
     $link = $attributes['link'] ?? '';
     $videoThumbnail = $attributes['videoThumbnail'] ?? '';
     $fullWidthClass = $attributes['isThumbnailFullWidth'] ? 'full-width' : '';
 
+    $videoDuration = $attributes['videoDuration'] ?? null;
+    $videoContent = is_null($videoDuration)
+      ? ''
+      : "<div class='video-timestamp'>$videoDuration</div>";
+
     wp_enqueue_script(
         'header_video-handler-js',
         plugins_url('/src/block/show-video.js', __DIR__),
-        [],
-        true
+        [], // Dependencies, defined above.
+        true // Enqueue the script in the footer.
     );
-    return
-      "<div class='video-container $fullWidthClass' onclick='showVideo(this, \"$link\")'>
+    return "
+      <div class='video-container $fullWidthClass' onclick='showVideo(this, \"$link\")'>
         <div class='thumbnail-container $fullWidthClass' style='background-image:url(\"$videoThumbnail\")'>
-          <img class='play-icon' alt='Play' src='".plugin_dir_url( __DIR__ )."/assets/play_button.png' />
+          <img class='play-icon' alt='Play' src='".plugin_dir_url( __DIR__ )."assets/play_button.png' />
+          $videoContent
         </div>
 	    </div>";
 }

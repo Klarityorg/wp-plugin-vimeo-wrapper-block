@@ -29,6 +29,10 @@ registerBlockType( 'klarity/klarity-vimeo-wrapper', {
       type: 'string',
       default: ''
     },
+    videoDuration: {
+      type: 'string',
+      default: '00:00'
+    },
     isThumbnailFullWidth: {
       type: 'boolean',
       default: false
@@ -37,13 +41,19 @@ registerBlockType( 'klarity/klarity-vimeo-wrapper', {
 
   edit: props => {
 
-    let {attributes: {link, videoThumbnail, isThumbnailFullWidth}, setAttributes} = props;
+    let {attributes: {link, videoThumbnail, videoDuration, isThumbnailFullWidth}, setAttributes} = props;
 
     const setLink = event => {
       const selected = event.target;
-      setAttributes({link: selected.value})
+      setAttributes({link: selected.value});
       event.preventDefault();
     };
+
+    const setVideoDuration = event => {
+      const selected = event.target;
+			setAttributes({videoDuration: selected.value});
+      event.preventDefault();
+		};
 
     const setVideoThumbnail = imageObject => {
 			const backgroundImage = imageObject.url;
@@ -73,8 +83,8 @@ registerBlockType( 'klarity/klarity-vimeo-wrapper', {
     return (
       <form id="header_video_edit">
         <div className="form-group">
-          <label htmlFor="link">Vimeo Link:
-            <input id="link" type="text" value={link} onChange={setLink}/>
+          <label>Vimeo Link:
+            <input type="text" value={link} onChange={setLink}/>
           </label>
           <button onClick={getVideoThumbnail}>Automatically Try to Fetch Video Thumbnail</button>
         </div>
@@ -92,8 +102,14 @@ registerBlockType( 'klarity/klarity-vimeo-wrapper', {
             <p><strong>Thumbnail url:</strong> {videoThumbnail || 'No background image selected'}</p>
         </div>
         <div className="form-group">
-          <label>Full width:
+          <label>Video duration:
+            <input type="text" value={videoDuration} onChange={setVideoDuration}/>
+          </label>
+        </div>
+        <div className="form-group">
+          <label>
             <input type="checkbox" checked={isThumbnailFullWidth} onClick={setIsThumbnailFullWidth}/>
+            Full width
           </label>
         </div>
       </form>
