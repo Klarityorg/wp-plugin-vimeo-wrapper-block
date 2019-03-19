@@ -4,7 +4,7 @@ Tags: sub-pages, block, gutenberg
 Requires at least: 5.0.0
 Tested up to: 5.1.0
 Requires PHP: 7.2.0
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
@@ -27,8 +27,11 @@ If you wish to build the plugin yourself, see the "Building" section hereunder.
 4. Screenshot of Vimeo clip playing
 
 == Changelog ==
+= 1.1.1 =
+* Timestamp position fix for mobile
 = 1.0 =
 * Initial release
+
 
 == Building ==
 1. Make sure that the plugin is located in the `/wp-content/plugins` directory of your Wordpress setup
