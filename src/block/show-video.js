@@ -1,5 +1,5 @@
-function showVideo(elem, link) {
-  var iframe = jQuery('<iframe>', {
+function showVimeoWrapperVideo(elem, link) {
+  let iframe = jQuery('<iframe>', {
     src: link + '?muted=0&autoplay=1&loop=1',
     width: '100%',
     height: jQuery(".thumbnail-container").height(),
@@ -7,7 +7,8 @@ function showVideo(elem, link) {
     mozallowfullscreen: true,
     allowfullscreen:true,
     frameborder: 0,
-    scrolling: 'no'
+    scrolling: 'no',
+    allow: 'autoplay; fullscreen'
   });
 
   jQuery(elem)

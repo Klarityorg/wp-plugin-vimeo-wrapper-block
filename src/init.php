@@ -93,11 +93,11 @@ function render_video_thumbnail( $attributes ) {
     wp_enqueue_script(
         'header_video-handler-js',
         plugins_url('/src/block/show-video.js', __DIR__),
-        [], // Dependencies, defined above.
-        true // Enqueue the script in the footer.
+        [],
+        filemtime( plugin_dir_path( __DIR__ ) . 'src/block/show-video.js' ) // Version: File modification time.
     );
     return "
-      <div class='video-container $fullWidthClass' onclick='showVideo(this, \"$link\")'>
+      <div class='video-container $fullWidthClass' onclick='showVimeoWrapperVideo(this, \"$link\")'>
         <div class='thumbnail-container $fullWidthClass' style='background-image:url(\"$videoThumbnail\")'>
           <img class='play-icon' alt='Play' src='".plugin_dir_url( __DIR__ )."assets/play_button.png' />
           $videoContent
