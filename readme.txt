@@ -27,6 +27,9 @@ If you wish to build the plugin yourself, see the "Building" section hereunder.
 4. Screenshot of Vimeo clip playing
 
 == Changelog ==
+= 1.1.3 =
+* Background color for video container
+* Play button fix
 = 1.1.2 =
 * Fixed packaging problem
 = 1.1.1 =
