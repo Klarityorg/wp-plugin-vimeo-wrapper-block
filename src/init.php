@@ -25,7 +25,7 @@ function klarity_vimeo_wrapper_cgb_block_assets() { // phpcs:ignore
 		'klarity_vimeo_wrapper-cgb-style-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', __DIR__), // Block style CSS.
 		array( 'wp-editor' ), // Dependency to include the CSS after it.
-    filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
+    	filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
 	);
 }
 
@@ -47,7 +47,7 @@ function klarity_vimeo_wrapper_cgb_editor_assets() { // phpcs:ignore
 		'klarity_vimeo_wrapper-cgb-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', __DIR__), // Block.build.js: We register the block here. Built with Webpack.
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
-    filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
+    	filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: File modification time.
 		true // Enqueue the script in the footer.
 	);
 
@@ -56,7 +56,7 @@ function klarity_vimeo_wrapper_cgb_editor_assets() { // phpcs:ignore
 		'klarity_vimeo_wrapper-cgb-block-editor-css', // Handle.
 		plugins_url( 'dist/blocks.editor.build.css', __DIR__), // Block editor CSS.
 		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-    filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
+    	filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 }
 
