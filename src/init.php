@@ -99,7 +99,7 @@ function render_video_thumbnail( $attributes ) {
     return "
       <div class='video-container $fullWidthClass' onclick='showVimeoWrapperVideo(this, \"$link\")'>
         <div class='thumbnail-container $fullWidthClass' style='background-image:url(\"$videoThumbnail\")'>
-          <img class='play-icon' alt='Play' src='".plugin_dir_url( __DIR__ )."images/play_button.png' />
+          <img class='play-icon' alt='Play' src='".plugin_dir_url( __DIR__ )."images/play_button.svg' />
           $videoContent
         </div>
 	    </div>";
